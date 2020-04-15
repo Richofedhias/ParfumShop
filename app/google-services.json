@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "714949053116",
+    "firebase_url": "https://parfum-9fe12.firebaseio.com",
+    "project_id": "parfum-9fe12",
+    "storage_bucket": "parfum-9fe12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714949053116:android:854c004e3e673835215eb9",
+        "android_client_info": {
+          "package_name": "com.javabrother.parfumshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714949053116-h77tqbivopsg1vq146oc6re0gj9pvkhv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.javabrother.parfumshop",
+            "certificate_hash": "b8891bfeab70c55ed28971b799d543009e487ab7"
+          }
+        },
+        {
+          "client_id": "714949053116-gut4rd8slhk96hv1eemai3d85l2hq39v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZTQHInc6J1JqIIE1IT5Aum137g1_xGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714949053116-gut4rd8slhk96hv1eemai3d85l2hq39v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
