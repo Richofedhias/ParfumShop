@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BerandaAdminActivity"></activity>
+        <activity android:name=".TambahListActivity"></activity>
+        <activity android:name=".BerandaAdminActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".RegisterUserActivity" />
         <activity android:name=".LoginAdminActivity" />

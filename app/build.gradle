@@ -35,4 +35,7 @@ dependencies {
     //database firebase
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.2.1'
+
+    //library
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 }
