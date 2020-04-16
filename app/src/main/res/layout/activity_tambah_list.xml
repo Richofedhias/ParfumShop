@@ -58,15 +58,24 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/eT_AdminTambahJumlahParfum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        app:finalNumber="99"
-        app:initialNumber="1"
-        app:layout_constraintTop_toBottomOf="@+id/eT_AdminTambahHargaParfum"
-        app:textSize="9sp" />
+        app:errorEnabled="true"
+        android:paddingLeft="16sp"
+        android:paddingRight="16sp"
+        android:textColorHint="@color/colorGrey"
+        app:layout_constraintTop_toBottomOf="@id/eT_AdminTambahHargaParfum">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jumlah"
+            android:inputType="number"
+            android:textColor="@color/colorBlack" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <LinearLayout
@@ -76,9 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eT_AdminTambahJumlahParfum"
-        app:layout_constraintVertical_bias="0.332">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btn_TambahListPria"
@@ -94,8 +101,8 @@
             android:id="@+id/btn_TambahListWanita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="8dp"
+            android:layout_weight="1"
             android:background="@drawable/bg_login"
             android:text="Untuk Wanita"
             android:textColor="@android:color/background_light" />

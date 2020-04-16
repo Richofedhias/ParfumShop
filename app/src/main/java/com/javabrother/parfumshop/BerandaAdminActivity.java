@@ -27,7 +27,6 @@ public class BerandaAdminActivity extends AppCompatActivity {
         fab = findViewById(R.id.fabAdmin);
         viewPager_tabLayout();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         fab.setOnClickListener(new View.OnClickListener() {
