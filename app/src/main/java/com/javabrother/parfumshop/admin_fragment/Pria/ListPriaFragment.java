@@ -23,7 +23,6 @@ public class ListPriaFragment extends Fragment {
     RecyclerView rV_list;
     PriaAdapter adapter;
     ArrayList<PriaList> list = new ArrayList<>();
-    ProgressBar pb;
 
     public ListPriaFragment() {
         // Required empty public constructor
@@ -39,8 +38,6 @@ public class ListPriaFragment extends Fragment {
         rV_list.setHasFixedSize(true);
 
         rV_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        pb = (ProgressBar) v.findViewById(R.id.pb_Pria);
-        pb.setVisibility(View.VISIBLE);
 
         init();
         return v;
@@ -56,7 +53,6 @@ public class ListPriaFragment extends Fragment {
 
     private void init() {
 
-        pb.setVisibility(View.INVISIBLE);
     }
 
 

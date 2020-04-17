@@ -1,19 +1,29 @@
 package com.javabrother.parfumshop;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
 
 public class PriaParfumAdapter extends RecyclerView.Adapter<PriaParfumAdapter.myViewholder> {
 
@@ -35,35 +45,19 @@ public class PriaParfumAdapter extends RecyclerView.Adapter<PriaParfumAdapter.my
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewholder holder, int position) {
+    public void onBindViewHolder(@NonNull final myViewholder holder, int position) {
         final PriaParfumList priaParfumList = lists.get(position);
 
-        holder.nama.setText(priaParfumList.getNama());
-        holder.harga.setText(priaParfumList.getHarga());
+        holder.nama.setText(priaParfumList.getNamaParfum());
+        holder.harga.setText(priaParfumList.getHargaParfum());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(view.getContext(), R.style.BottomSheetDialogTheme);
-                final View v = LayoutInflater.from(context).inflate(R.layout.bottom_dialog, (ConstraintLayout) view.findViewById(R.id.container_dialog));
-
-                v.findViewById(R.id.btn_keranjang).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                });
-
-                v.findViewById(R.id.btn_struk).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(view.getContext(), ParfumPriaStrukActivity.class);
-                        view.getContext().startActivity(intent);
-                    }
-                });
-
-                bottomSheetDialog.setContentView(v);
-                bottomSheetDialog.show();
+                Intent intent = new Intent(view.getContext(), DetailParfumActivity.class);
+                intent.putExtra("nama", priaParfumList.getNamaParfum());
+                intent.putExtra("harga", priaParfumList.getHargaParfum());
+                view.getContext().startActivity(intent);
             }
         });
     }

@@ -1,26 +1,30 @@
 package com.javabrother.parfumshop;
 
 public class PriaParfumList {
-    String nama, harga;
+    private String namaParfum, hargaParfum;
 
-    public PriaParfumList(String nama, String harga) {
-        this.nama = nama;
-        this.harga = harga;
+    public PriaParfumList(String namaParfum, String hargaParfum) {
+        this.namaParfum = namaParfum;
+        this.hargaParfum = hargaParfum;
     }
 
-    public String getNama() {
-        return nama;
+    public PriaParfumList() {
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public String getNamaParfum() {
+        return namaParfum;
     }
 
-    public String getHarga() {
-        return harga;
+    public void setNamaParfum(String namaParfum) {
+        this.namaParfum = namaParfum;
     }
 
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public String getHargaParfum() {
+        return hargaParfum;
     }
+
+    public void setHargaParfum(String hargaParfum) {
+        this.hargaParfum = hargaParfum;
+    }
+
 }

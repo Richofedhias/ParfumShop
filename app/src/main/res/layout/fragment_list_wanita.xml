@@ -5,19 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".admin_fragment.Wanita.ListWanitaFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Halaman Masih Kosong\nHarap Diisi"
-        android:gravity="center"
-        android:layout_gravity="center"/>
-
-    <ProgressBar
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pb_Wanita"
-        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/rv_AdminWanitaList"
