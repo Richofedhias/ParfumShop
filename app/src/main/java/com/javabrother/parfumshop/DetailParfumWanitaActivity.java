@@ -2,7 +2,6 @@ package com.javabrother.parfumshop;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,39 +12,34 @@ import android.widget.TextView;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.javabrother.parfumshop.fragment.KeranjangFragment;
 import com.javabrother.parfumshop.model.ParfumeCow;
 
 import java.util.HashMap;
 
-public class DetailParfumActivity extends AppCompatActivity {
+public class DetailParfumWanitaActivity extends AppCompatActivity {
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private TextView detailNamaParfum, detailHargaParfum;
     private ElegantNumberButton detailJumlahParfum;
-    private static final String PARFUMECOW = "parfumecow";
+    private static final String PARFUMECEW = "parfumecew";
     private String namaParfum, hargaParfum;
     private Button btn_keranjang, btn_bayar;
     private String Uid = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_parfum);
+        setContentView(R.layout.activity_detail_parfum_wanita);
 
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference(PARFUMECOW);
+        reference = database.getReference(PARFUMECEW);
 
-        detailNamaParfum = findViewById(R.id.detail_Namadialog);
-        detailHargaParfum = findViewById(R.id.detail_HargaDialog);
-        detailJumlahParfum = findViewById(R.id.detail_JumlahDialog);
+        detailNamaParfum = findViewById(R.id.detail_NamadialogW);
+        detailHargaParfum = findViewById(R.id.detail_HargaDialogW);
+        detailJumlahParfum = findViewById(R.id.detail_JumlahDialogW);
 
         namaParfum = getIntent().getStringExtra("nama");
         hargaParfum = getIntent().getStringExtra("harga");
@@ -65,7 +59,7 @@ public class DetailParfumActivity extends AppCompatActivity {
         btn_bayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailParfumActivity.this, ParfumPriaStrukActivity.class);
+                Intent intent = new Intent(DetailParfumWanitaActivity.this, ParfumWanitaStrukActivity.class);
                 intent.putExtra("nama", detailNamaParfum.getText().toString());
                 intent.putExtra("harga", detailHargaParfum.getText().toString());
                 intent.putExtra("jumlah", detailJumlahParfum.getNumber());
@@ -89,7 +83,7 @@ public class DetailParfumActivity extends AppCompatActivity {
                     ref.child("Keranjang").child(Uid).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            startActivity(new Intent(DetailParfumActivity.this, HomeActivity.class));
+                            startActivity(new Intent(DetailParfumWanitaActivity.this, HomeActivity.class));
                         }
                     });
                 }

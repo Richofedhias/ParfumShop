@@ -4,7 +4,9 @@ package com.javabrother.parfumshop.fragment;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,10 +37,7 @@ public class KeranjangFragment extends Fragment {
 
     private RecyclerView rv_list;
     private KeranjangAdapter adapter;
-    private ArrayList<KeranjangList> lists = new ArrayList<>();
-    private Button btn_next;
-    private TextView Total;
-
+    private ArrayList<KeranjangList> lists;
     private DatabaseReference ref;
     private FirebaseDatabase database;
 
@@ -53,35 +53,35 @@ public class KeranjangFragment extends Fragment {
         rv_list = v.findViewById(R.id.rv_Keranjang);
         rv_list.setHasFixedSize(true);
         rv_list.setLayoutManager(new LinearLayoutManager(v.getContext()));
-
+        LinearLayoutManager layoutManager = new  LinearLayoutManager(v.getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_list.setLayoutManager(layoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(v.getContext(),
+                layoutManager.getOrientation());
+        rv_list.addItemDecoration(dividerItemDecoration);
         database = FirebaseDatabase.getInstance();
         ref = database.getReference();
-
         list();
-
-        btn_next = v.findViewById(R.id.btn_Next);
-        Total = v.findViewById(R.id.tV_JumlahTotal);
 
         return v;
     }
 
     public void list() {
-        Query query = ref.child("Keranjang").child("User View").child("Products");
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
+
+        ref.child("Keranjang").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                lists = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    KeranjangList contoh = new KeranjangList();
-                    contoh.setNama(snapshot.child("nama").getValue().toString());
-                    contoh.setHarga(snapshot.child("harga").getValue().toString());
-                    contoh.setJumlah(snapshot.child("jumlah").getValue().toString());
+                    KeranjangList barang = snapshot.getValue(KeranjangList.class);
+                    barang.setKey(snapshot.getKey());
 
-                    lists.add(contoh);
+                    lists.add(barang);
+
                 }
                 adapter = new KeranjangAdapter(getContext(),lists);
                 rv_list.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-
             }
 
             @Override
@@ -89,7 +89,6 @@ public class KeranjangFragment extends Fragment {
 
             }
         });
-
     }
 
 }

@@ -18,6 +18,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.myVi
 
     Context context;
     ArrayList<KeranjangList> lists;
+    int TotalHarga= 0;
 
     public KeranjangAdapter(Context context, ArrayList<KeranjangList> lists) {
         this.context = context;
@@ -36,20 +37,22 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.myVi
     @Override
     public void onBindViewHolder(@NonNull myViewholder holder, int position) {
         final KeranjangList priaParfumList = lists.get(position);
-
         holder.nama.setText(priaParfumList.getNama());
         holder.harga.setText(priaParfumList.getHarga());
-        holder.jumlah.setText(priaParfumList.getHarga());
+        holder.jumlah.setText(priaParfumList.getJumlah());
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), DetailParfumActivity.class);
-//                intent.putExtra("nama", priaParfumList.getNamaParfum());
-//                intent.putExtra("harga", priaParfumList.getHargaParfum());
-//                view.getContext().startActivity(intent);
-//            }
-//        });
+        TotalHarga = TotalHarga + (Integer.valueOf(priaParfumList.getHarga()) * Integer.valueOf(priaParfumList.getJumlah()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ParfumPriaStrukActivity.class);
+                intent.putExtra("nama", priaParfumList.getNama());
+                intent.putExtra("harga", priaParfumList.getHarga());
+                intent.putExtra("jumlah", priaParfumList.getJumlah());
+                intent.putExtra("Total", String.valueOf(TotalHarga));
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -58,7 +61,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.myVi
     }
 
     public class myViewholder extends RecyclerView.ViewHolder {
-        TextView nama, harga, jumlah;
+        TextView nama, harga, jumlah, total;
 
         public myViewholder(@NonNull View itemView) {
             super(itemView);

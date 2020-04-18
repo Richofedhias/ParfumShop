@@ -15,11 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailParfumActivity"></activity>
-        <activity android:name=".TambahListActivity"></activity>
-        <activity android:name=".BerandaAdminActivity" android:theme="@style/AppTheme2"/>
+        <activity android:name=".DetailParfumWanitaActivity"></activity>
+        <activity android:name=".DetailParfumActivity" />
+        <activity android:name=".TambahListActivity" />
+        <activity
+            android:name=".BerandaAdminActivity"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".ForgetPasswordActivity" />
-        <activity android:name=".RegisterUserActivity"></activity>
+        <activity android:name=".RegisterUserActivity" />
         <activity android:name=".LoginAdminActivity" />
         <activity android:name=".LoginUserActivity" />
         <activity android:name=".KategoriMasukActivity">

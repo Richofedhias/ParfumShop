@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,7 +50,12 @@ public class PriaParfumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pria_parfum);
         rv_list = findViewById(R.id.rv_Prialist);
         rv_list.setHasFixedSize(true);
-        rv_list.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new  LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_list.setLayoutManager(layoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
+                layoutManager.getOrientation());
+        rv_list.addItemDecoration(dividerItemDecoration);
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference();

@@ -1,6 +1,7 @@
 package com.javabrother.parfumshop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,11 +32,21 @@ public class WanitaParfumAdapter extends RecyclerView.Adapter<WanitaParfumAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WanitaParfumAdapter.myViewholder holder, int position) {
+    public void onBindViewHolder(@NonNull final myViewholder holder, int position) {
         final WanitaParfumList wanitaParfumList = lists.get(position);
 
         holder.nama.setText(wanitaParfumList.getNama());
         holder.harga.setText(wanitaParfumList.getHarga());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DetailParfumActivity.class);
+                intent.putExtra("nama", wanitaParfumList.getNama());
+                intent.putExtra("harga", wanitaParfumList.getHarga());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

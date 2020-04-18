@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2E2E2"
     tools:context=".ParfumPriaStrukActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_beranda"
+        android:background="#fff"
+        android:elevation="5dp"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
@@ -18,34 +20,139 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Struk"
+            android:padding="16dp"
             android:textSize="20sp"
             android:textColor="#000"
             android:textStyle="bold"
             android:gravity="center"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Parfum A"
-            android:gravity="center"
-            android:layout_margin="8dp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nama Parfum"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/tV_NamaStrukPria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Parfum A"
+                android:gravity="center"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Harga"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/tV_HargaStrukPria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rp. 10.000"
+                android:gravity="center"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jumlah"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/tV_JumlahStrukPria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jumlah : 1"
+                android:gravity="center"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total"
+                android:textColor="#000"
+                android:gravity="right"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/tV_TotalStrukPria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total"
+                android:gravity="center"
+                android:textColor="#000"
+                android:padding="8dp"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rp. 10.000"
+            android:text="Terimakasih Telah Berbelanja"
             android:gravity="center"
-            android:layout_margin="8dp"/>
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
 
-        <TextView
+        <Button
+            android:id="@+id/btn_bayar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jumlah : 1"
-            android:gravity="center"
-            android:layout_margin="8dp"/>
+            android:layout_alignParentBottom="true"
+            android:text="Bayar"
+            android:textColor="#fff"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_logout"/>
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

@@ -8,6 +8,9 @@ public class WanitaParfumList {
         this.harga = harga;
     }
 
+    public WanitaParfumList() {
+    }
+
     public String getNama() {
         return nama;
     }

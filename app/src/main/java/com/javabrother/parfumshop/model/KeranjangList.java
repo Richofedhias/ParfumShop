@@ -4,6 +4,13 @@ public class KeranjangList {
     String Nama;
     String harga;
     String jumlah;
+    String key;
+
+    public KeranjangList(String nama, String harga, String jumlah) {
+        Nama = nama;
+        this.harga = harga;
+        this.jumlah = jumlah;
+    }
 
     public KeranjangList() {
     }
@@ -30,5 +37,20 @@ public class KeranjangList {
 
     public void setJumlah(String jumlah) {
         this.jumlah = jumlah;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    @Override
+    public String toString() {
+        return " "+Nama+"\n" +
+                " "+harga +"\n" +
+                " "+harga;
     }
 }
