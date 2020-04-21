@@ -86,7 +86,6 @@ public class RegisterUserActivity extends AppCompatActivity {
                     mLoading.dismiss();
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     userId = firebaseAuth.getCurrentUser().getUid();
-                    Toast.makeText(RegisterUserActivity.this, "Berhasil Registrasi",Toast.LENGTH_SHORT).show();
                     DocumentReference documentReference = fStore.collection("user").document(userId);
                     Map<String,Object> usermap = new HashMap<>();
                     usermap.put("nama",namaUser);
@@ -96,20 +95,22 @@ public class RegisterUserActivity extends AppCompatActivity {
                     documentReference.set(usermap).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(RegisterUserActivity.this, userId, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterUserActivity.this, LoginUserActivity.class);
+                            Toast.makeText(RegisterUserActivity.this, "Akun Berhasil Dibuat", Toast.LENGTH_SHORT).show();
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
                         }
                     });
                     
 
                 } else {
                     mLoading.dismiss();
-                    Toast.makeText(RegisterUserActivity.this, "Registrasi Gagal", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(RegisterUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterUserActivity.this, "Akun Sudah Terdaftar", Toast.LENGTH_SHORT).show();
             }
         });
     }

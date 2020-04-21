@@ -16,7 +16,7 @@ import com.javabrother.parfumshop.model.ParfumeCow;
 import java.util.HashMap;
 
 public class TambahListActivity extends AppCompatActivity {
-    private TextInputLayout namaParfume, harga, jumlah;
+    private TextInputLayout namaParfume, harga;
     private Button tambahparfumeCowo, tambahparfumeCewe;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -35,7 +35,6 @@ public class TambahListActivity extends AppCompatActivity {
 
         namaParfume = findViewById(R.id.eT_AdminTambahNamaParfum);
         harga = findViewById(R.id.eT_AdminTambahHargaParfum);
-        jumlah = findViewById(R.id.eT_AdminTambahJumlahParfum);
         tambahparfumeCowo = findViewById(R.id.btn_TambahListPria);
         tambahparfumeCewe = findViewById(R.id.btn_TambahListWanita);
         database = FirebaseDatabase.getInstance();
@@ -49,7 +48,6 @@ public class TambahListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String namaParDat = namaParfume.getEditText().getText().toString();
                 String hargaDat = harga.getEditText().getText().toString();
-                String jumlahDat = jumlah.getEditText().getText().toString();
                 if (namaParDat.isEmpty()) {
                     namaParfume.setError("Mohon Diisi Nama Parfume");
                     namaParfume.setFocusable(true);
@@ -58,11 +56,8 @@ public class TambahListActivity extends AppCompatActivity {
                     harga.setError("Mohon Diisi Harga Parfume");
                     harga.setFocusable(true);
                 }
-                if (jumlahDat.isEmpty()) {
-                    jumlah.setError("Mohon Diisi Jumlah Parfume");
-                    jumlah.setFocusable(true);
-                } else {
-                    parfumeCow = new ParfumeCow(namaParDat, hargaDat, jumlahDat);
+                else {
+                    parfumeCow = new ParfumeCow(namaParDat, hargaDat);
                     String keyId = reference.push().getKey();
                     reference.child(keyId).setValue(parfumeCow);
                     Intent intent = new Intent(TambahListActivity.this,BerandaAdminActivity.class);
@@ -77,7 +72,6 @@ public class TambahListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String namaParDat = namaParfume.getEditText().getText().toString();
                 String hargaDat = harga.getEditText().getText().toString();
-                String jumlahDat = jumlah.getEditText().getText().toString();
                 if (namaParDat.isEmpty()) {
                     namaParfume.setError("Mohon Diisi Nama Parfume");
                     namaParfume.setFocusable(true);
@@ -86,16 +80,13 @@ public class TambahListActivity extends AppCompatActivity {
                     harga.setError("Mohon Diisi Harga Parfume");
                     harga.setFocusable(true);
                 }
-                if (jumlahDat.isEmpty()) {
-                    jumlah.setError("Mohon Diisi Jumlah Parfume");
-                    jumlah.setFocusable(true);
-                } else {
-                    parfumeCew = new ParfumeCew(namaParDat, hargaDat, jumlahDat);
+                else {
+                    parfumeCew = new ParfumeCew(namaParDat, hargaDat);
                     String keyId = referenceCew.push().getKey();
                     referenceCew.child(keyId).setValue(parfumeCew);
-//                    Intent intent = new Intent(TambahListActivity.this,BerandaAdminActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                    startActivity(intent);
+                    Intent intent = new Intent(TambahListActivity.this,BerandaAdminActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
             }
         });

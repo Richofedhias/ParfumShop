@@ -2,11 +2,11 @@ package com.javabrother.parfumshop.admin_fragment.Wanita;
 
 public class WanitaList {
     String nama;
-    int jumlah, harga;
+    String harga;
+    String key;
 
-    public WanitaList(String nama, int jumlah, int harga) {
+    public WanitaList(String nama, String harga) {
         this.nama = nama;
-        this.jumlah = jumlah;
         this.harga = harga;
     }
 
@@ -21,19 +21,19 @@ public class WanitaList {
         this.nama = nama;
     }
 
-    public int getJumlah() {
-        return jumlah;
+    public void setHarga(String harga) {
+        this.harga = harga;
     }
 
-    public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
-    }
-
-    public int getHarga() {
+    public String getHarga() {
         return harga;
     }
 
-    public void setHarga(int harga) {
-        this.harga = harga;
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

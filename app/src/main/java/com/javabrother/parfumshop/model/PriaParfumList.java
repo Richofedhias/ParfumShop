@@ -1,4 +1,4 @@
-package com.javabrother.parfumshop;
+package com.javabrother.parfumshop.model;
 
 public class PriaParfumList {
     private String namaParfum, hargaParfum;

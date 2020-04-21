@@ -3,15 +3,13 @@ package com.javabrother.parfumshop.model;
 public class ParfumeCew {
     String Nama;
     String harga;
-    String jumlah;
 
     public ParfumeCew() {
     }
 
-    public ParfumeCew(String nama, String harga, String jumlah) {
+    public ParfumeCew(String nama, String harga) {
         Nama = nama;
         this.harga = harga;
-        this.jumlah = jumlah;
     }
 
     public String getNama() {
@@ -30,11 +28,4 @@ public class ParfumeCew {
         this.harga = harga;
     }
 
-    public String getJumlah() {
-        return jumlah;
-    }
-
-    public void setJumlah(String jumlah) {
-        this.jumlah = jumlah;
-    }
 }

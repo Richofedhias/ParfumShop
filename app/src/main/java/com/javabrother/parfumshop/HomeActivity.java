@@ -5,28 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.javabrother.parfumshop.fragment.AkunFragment;
 import com.javabrother.parfumshop.fragment.BerandaFragment;
 import com.javabrother.parfumshop.fragment.KeranjangFragment;
-import com.javabrother.parfumshop.fragment.KomentarFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private BerandaFragment berandaFragment;
     private KeranjangFragment keranjangFragment;
-    private KomentarFragment komentarFragment;
-    private AkunFragment akunFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
         berandaFragment = new BerandaFragment();
         keranjangFragment = new KeranjangFragment();
-        komentarFragment = new KomentarFragment();
-        akunFragment = new AkunFragment();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         setFragment(berandaFragment);
@@ -51,16 +51,9 @@ public class HomeActivity extends AppCompatActivity {
                         case R.id.menu_keranjang:
                             setFragment(keranjangFragment);
                             break;
-                        case R.id.menu_komentar:
-                            setFragment(komentarFragment);
-                            break;
-                        case R.id.menu_akun:
-                            setFragment(akunFragment);
-                            break;
                     }
-
-
                     return true;
                 }
             };
+    
 }

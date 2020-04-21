@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.javabrother.parfumshop.model.WanitaParfumList;
+
 import java.util.ArrayList;
 
 public class WanitaParfumAdapter extends RecyclerView.Adapter<WanitaParfumAdapter.myViewholder> {

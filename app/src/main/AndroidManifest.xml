@@ -15,14 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".admin_fragment.Wanita.EditParfumWanitaActivity"></activity>
+        <activity android:name=".admin_fragment.Pria.EditParfumPriaActivity" />
+        <activity android:name=".EditProfileActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".DetailParfumWanitaActivity" />
         <activity android:name=".DetailParfumActivity" />
         <activity android:name=".TambahListActivity" />
-        <activity
-            android:name=".BerandaAdminActivity"
-            android:theme="@style/AppTheme2" />
+        <activity android:name=".BerandaAdminActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".RegisterUserActivity" />
         <activity android:name=".LoginAdminActivity" />

@@ -90,20 +90,19 @@ public class LoginUserActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginUserActivity.this, ProfileActivity.class);
+                            Intent intent = new Intent(LoginUserActivity.this, HomeActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             Toast.makeText(LoginUserActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
                         } else {
                             mLoading.dismiss();
-                            Toast.makeText(LoginUserActivity.this, "Otentikasi Gagal", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 mLoading.dismiss();
-                Toast.makeText(LoginUserActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginUserActivity.this, "Login Gagal " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
