@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.javabrother.parfumshop.MainActivity;
+import com.javabrother.parfumshop.post.PostActivity;
 import com.javabrother.parfumshop.PriaParfumActivity;
 import com.javabrother.parfumshop.ProfileActivity;
 import com.javabrother.parfumshop.R;
@@ -66,7 +66,7 @@ public class BerandaFragment extends Fragment {
         komen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(getContext(), ProfileActivity.class));
+                startActivity(new Intent(getContext(), PostActivity.class));
             }
         });
 

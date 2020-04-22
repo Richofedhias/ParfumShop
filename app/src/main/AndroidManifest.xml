@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name="androidx.multidex.MultiDexApplication"
@@ -15,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".admin_fragment.Wanita.EditParfumWanitaActivity"></activity>
+        <activity android:name=".post.PostDetailActivity"></activity>
+        <activity android:name=".post.PostActivity" />
+        <activity android:name=".post.NewPostActivity" />
+        <activity android:name=".admin_fragment.Wanita.EditParfumWanitaActivity" />
         <activity android:name=".admin_fragment.Pria.EditParfumPriaActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ProfileActivity" />
