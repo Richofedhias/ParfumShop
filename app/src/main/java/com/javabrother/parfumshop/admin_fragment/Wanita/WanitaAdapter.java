@@ -1,7 +1,6 @@
 package com.javabrother.parfumshop.admin_fragment.Wanita;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.javabrother.parfumshop.R;
-import com.javabrother.parfumshop.admin_fragment.Pria.EditParfumPriaActivity;
-import com.javabrother.parfumshop.admin_fragment.Pria.PriaAdapter;
-import com.javabrother.parfumshop.admin_fragment.Pria.PriaList;
 
 import java.util.ArrayList;
 
@@ -52,16 +48,6 @@ public class WanitaAdapter extends RecyclerView.Adapter<WanitaAdapter.myViewHold
                 Toast.makeText(mContext, "Data Sudah Terhapus", Toast.LENGTH_SHORT).show();
             }
         });
-
-//        holder.btn_edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), EditParfumWanitaActivity.class);
-//                intent.putExtra("nama", item.getNama());
-//                intent.putExtra("harga", item.getHarga());
-//                view.getContext().startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -71,14 +57,13 @@ public class WanitaAdapter extends RecyclerView.Adapter<WanitaAdapter.myViewHold
 
     public class myViewHolder extends RecyclerView.ViewHolder {
         TextView nama, harga;
-        Button btn_delete, btn_edit;
+        Button btn_delete;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             nama = itemView.findViewById(R.id.tV_AdminNamaParfumW);
             harga = itemView.findViewById(R.id.tV_AdminHargaParfumW);
             btn_delete = itemView.findViewById(R.id.btn_HapusW);
-            btn_edit = itemView.findViewById(R.id.btn_EditW);
         }
     }
 }

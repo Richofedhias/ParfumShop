@@ -13,8 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.javabrother.parfumshop.model.ParfumeCew;
 import com.javabrother.parfumshop.model.ParfumeCow;
 
-import java.util.HashMap;
-
 public class TambahListActivity extends AppCompatActivity {
     private TextInputLayout namaParfume, harga;
     private Button tambahparfumeCowo, tambahparfumeCewe;

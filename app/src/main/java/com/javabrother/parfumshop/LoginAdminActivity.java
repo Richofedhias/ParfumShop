@@ -21,8 +21,6 @@ public class LoginAdminActivity extends AppCompatActivity {
         email = findViewById(R.id.eT_loginEmail);
         password = findViewById(R.id.eT_loginPassword);
         login = findViewById(R.id.btn_Login);
-        final String emailAdmin = email.getEditText().getText().toString();
-        final String passAdmin = password.getEditText().getText().toString();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

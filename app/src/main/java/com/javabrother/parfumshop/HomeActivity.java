@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.javabrother.parfumshop.fragment.AboutFragment;
 import com.javabrother.parfumshop.fragment.BerandaFragment;
 import com.javabrother.parfumshop.fragment.FaqFragment;
@@ -23,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private KeranjangFragment keranjangFragment;
     private FaqFragment faqFragment;
     private AboutFragment aboutFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         setFragment(berandaFragment);
+//        checkUserStatus();
     }
 
     private void setFragment(Fragment fragment) {
@@ -44,12 +48,12 @@ public class HomeActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
                     switch (item.getItemId()) {
                         case R.id.menu_beranda:
                             setFragment(berandaFragment);

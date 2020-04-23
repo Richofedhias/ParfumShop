@@ -61,7 +61,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.myVi
     }
 
     public class myViewholder extends RecyclerView.ViewHolder {
-        TextView nama, harga, jumlah, total;
+        TextView nama, harga, jumlah;
 
         public myViewholder(@NonNull View itemView) {
             super(itemView);

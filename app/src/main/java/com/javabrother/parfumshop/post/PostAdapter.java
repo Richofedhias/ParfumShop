@@ -104,7 +104,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myViewHolder> 
         holder.pTitleTv.setText(pTitle);
         holder.pDescrTv.setText(pDesc);
         holder.pLikeTv.setText(pLikes + " Suka");
-        holder.pCommentTv.setText(pComments + " Komentar");
+//        holder.pCommentTv.setText(pComments + " Komentar");
 
         setLikes(holder,pId);
 
@@ -167,77 +167,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myViewHolder> 
                 });
             }
         });
-
-        holder.commentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, PostDetailActivity.class);
-                intent.putExtra("postId",pId);
-                mContext.startActivity(intent);
-
-            }
-        });
-
-        holder.shareBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                BitmapDrawable bitmapDrawable =(BitmapDrawable)holder.pImageIv.getDrawable();
-                if (bitmapDrawable == null){
-
-                    shareTexOnly(pTitle,pDesc);
-                }
-                else{
-
-                    Bitmap bitmap = bitmapDrawable.getBitmap();
-                    shareImageAndText(pTitle,pDesc,bitmap);
-
-                }
-            }
-        });
-    }
-
-    private void shareImageAndText(String pTitle, String pDesc, Bitmap bitmap) {
-        String shareBody = pTitle +"\n" + pDesc;
-        Uri uri = saveImageToShare(bitmap);
-
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_STREAM,uri);
-        intent.putExtra(Intent.EXTRA_TEXT,shareBody);
-        intent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
-        intent.setType("image/png");
-        mContext.startActivity(Intent.createChooser(intent,"Kirim Lewat"));
-    }
-
-    private Uri saveImageToShare(Bitmap bitmap) {
-        File imageFolder = new File(mContext.getCacheDir(), "images");
-        Uri uri = null;
-        try{
-            imageFolder.mkdirs();
-            File file = new File(imageFolder, "shared_images.png");
-
-            FileOutputStream stream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream);
-            stream.flush();
-            stream.close();
-            uri = FileProvider.getUriForFile(mContext, "org.d3ifcool.sicoding", file);
-
-        }
-        catch (Exception e){
-            Toast.makeText(mContext, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-        return uri;
-    }
-
-    private void shareTexOnly(String pTitle, String pDesc) {
-
-        String shareBody = pTitle +"\n" + pDesc;
-
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
-        intent.putExtra(Intent.EXTRA_TEXT, shareBody);
-        mContext.startActivity(Intent.createChooser(intent, "Berbagi Lewat"));
     }
 
     private void setLikes(final myViewHolder holder, final String postKey) {
@@ -272,24 +201,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myViewHolder> 
             popupMenu.getMenu().add(Menu.NONE, 0, 0, "Menghapus");
 
         }
-        popupMenu.getMenu().add(Menu.NONE, 1, 0, "Lihat Lebih Detail");
 
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                int id = menuItem.getItemId();
-                if (id == 0) {
-
-                    beginDelete(pId, pImage);
-                }else if (id == 1){
-                    Intent intent = new Intent(mContext, PostDetailActivity.class);
-                    intent.putExtra("postId",pId);
-                    mContext.startActivity(intent);
-                }
-
-                return false;
-            }
-        });
         popupMenu.show();
     }
 
@@ -384,7 +296,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.myViewHolder> 
             pImageIv = itemView.findViewById(R.id.iV_imagePost);
             moreBtn = itemView.findViewById(R.id.moreBtn);
             likeBtn = itemView.findViewById(R.id.btn_like);
-            commentBtn = itemView.findViewById(R.id.btn_comment);
+//            commentBtn = itemView.findViewById(R.id.btn_comment);
             shareBtn = itemView.findViewById(R.id.btn_share);
         }
     }

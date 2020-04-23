@@ -88,15 +88,15 @@
                 android:layout_weight="1"
                 android:text="1,2rb Suka"
                 android:textColor="@color/colorBlack"/>
-            <TextView
-                android:id="@+id/tv_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAlignment="textEnd"
-                android:text="1.2rb komentar"
-                android:textColor="@color/colorBlack"
-                android:gravity="end" />
+<!--            <TextView-->
+<!--                android:id="@+id/tv_comment"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textAlignment="textEnd"-->
+<!--                android:text="1.2rb komentar"-->
+<!--                android:textColor="@color/colorBlack"-->
+<!--                android:gravity="end" />-->
 
         </LinearLayout>
 
@@ -122,25 +122,25 @@
                 android:src="@drawable/ic_like"
                 />
 
-            <ImageButton
-                android:id="@+id/btn_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorwhite"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:src="@drawable/ic_comment"/>
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_comment"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/colorwhite"-->
+<!--                android:paddingTop="8dp"-->
+<!--                android:paddingBottom="8dp"-->
+<!--                android:src="@drawable/ic_comment"/>-->
 
-            <ImageButton
-                android:id="@+id/btn_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorwhite"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:src="@drawable/ic_share" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_share"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/colorwhite"-->
+<!--                android:paddingTop="8dp"-->
+<!--                android:paddingBottom="8dp"-->
+<!--                android:src="@drawable/ic_share" />-->
 
         </LinearLayout>
 

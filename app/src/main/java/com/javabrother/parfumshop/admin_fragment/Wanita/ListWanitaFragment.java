@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,8 +19,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.javabrother.parfumshop.R;
-import com.javabrother.parfumshop.admin_fragment.Pria.PriaAdapter;
-import com.javabrother.parfumshop.admin_fragment.Pria.PriaList;
 
 import java.util.ArrayList;
 

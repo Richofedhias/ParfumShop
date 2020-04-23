@@ -40,10 +40,6 @@ public class LoginUserActivity extends AppCompatActivity {
         mLoading.setMessage("Please Wait..");
         firebaseAuth = FirebaseAuth.getInstance();
 
-//        if (firebaseAuth !=null){
-//            startActivity(new Intent(LoginUserActivity.this,HomeActivity.class));
-//            finish();
-//        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

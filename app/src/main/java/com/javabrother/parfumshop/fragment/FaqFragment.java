@@ -2,7 +2,6 @@ package com.javabrother.parfumshop.fragment;
 
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,14 +22,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.javabrother.parfumshop.BerandaAdminActivity;
 import com.javabrother.parfumshop.FaqAdapter;
-import com.javabrother.parfumshop.KeranjangAdapter;
 import com.javabrother.parfumshop.R;
-import com.javabrother.parfumshop.TambahListActivity;
 import com.javabrother.parfumshop.model.FaqList;
-import com.javabrother.parfumshop.model.KeranjangList;
-import com.javabrother.parfumshop.model.ParfumeCow;
 
 import java.util.ArrayList;
 

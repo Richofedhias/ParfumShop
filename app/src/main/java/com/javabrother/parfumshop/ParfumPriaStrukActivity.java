@@ -47,7 +47,6 @@ public class ParfumPriaStrukActivity extends AppCompatActivity {
         extranama = getIntent().getStringExtra("nama");
         extraharga = getIntent().getStringExtra("harga");
         extrajumlah = getIntent().getStringExtra("jumlah");
-        String extratotal = getIntent().getStringExtra("Total");
 
         nama.setText(extranama);
         harga.setText("Rp. " + extraharga);

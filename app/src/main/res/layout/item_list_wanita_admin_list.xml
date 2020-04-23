@@ -38,16 +38,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_EditW"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit"
-            android:textColor="@color/colorwhite"
-            android:background="@drawable/bg_pria"
-            android:layout_margin="8dp"/>
-
-        <Button
             android:id="@+id/btn_HapusW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

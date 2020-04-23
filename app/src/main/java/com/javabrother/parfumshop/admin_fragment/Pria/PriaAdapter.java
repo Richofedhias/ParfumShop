@@ -1,12 +1,10 @@
 package com.javabrother.parfumshop.admin_fragment.Pria;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,16 +47,6 @@ public class PriaAdapter extends RecyclerView.Adapter<PriaAdapter.myViewHolder> 
                 Toast.makeText(mContext, "Data Sudah Terhapus", Toast.LENGTH_SHORT).show();
             }
         });
-
-//        holder.btn_edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), EditParfumPriaActivity.class);
-//                intent.putExtra("nama", item.getNama());
-//                intent.putExtra("harga", item.getHarga());
-//                view.getContext().startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -68,14 +56,13 @@ public class PriaAdapter extends RecyclerView.Adapter<PriaAdapter.myViewHolder> 
 
     public class myViewHolder extends RecyclerView.ViewHolder {
         TextView nama, harga;
-        Button btn_delete, btn_edit;
+        Button btn_delete;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             nama = itemView.findViewById(R.id.tV_AdminNamaParfumP);
             harga = itemView.findViewById(R.id.tV_AdminHargaParfumP);
             btn_delete = itemView.findViewById(R.id.btn_HapusP);
-            btn_edit = itemView.findViewById(R.id.btn_EditP);
         }
     }
 }

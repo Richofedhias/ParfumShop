@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class KategoriMasukActivity extends AppCompatActivity {
-private ImageView loginUser, loginAdmin;
+    private ImageView loginUser, loginAdmin;
+    String myEmail, myUid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +34,22 @@ private ImageView loginUser, loginAdmin;
                 startActivity(new Intent(KategoriMasukActivity.this,LoginAdminActivity.class));
             }
         });
+
+        checkUserStatus();
+    }
+
+    private void checkUserStatus(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            //user is login
+            myEmail = user.getEmail();
+            myUid = user.getUid();
+
+        }
+        else {
+            //user not login
+            startActivity(new Intent(this, KategoriMasukActivity.class));
+            finish();
+        }
     }
 }
