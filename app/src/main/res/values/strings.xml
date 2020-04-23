@@ -5,6 +5,8 @@
     <string name="menu_keranjang">Keranjang</string>
     <string name="menu_komentar">Komentar</string>
     <string name="menu_akun">Akun</string>
+    <string name="menu_faq">Faq</string>
+    <string name="menu_about">Tentang Kami</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

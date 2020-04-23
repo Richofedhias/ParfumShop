@@ -9,5 +9,13 @@
         android:id="@+id/menu_keranjang"
         android:title="@string/menu_keranjang"
         android:icon="@drawable/ic_shopping_cart"/>
+    <item
+        android:id="@+id/menu_faq"
+        android:title="@string/menu_faq"
+        android:icon="@drawable/ic_help"/>
+    <item
+        android:id="@+id/menu_about"
+        android:title="@string/menu_about"
+        android:icon="@drawable/ic_info"/>
 
 </menu>

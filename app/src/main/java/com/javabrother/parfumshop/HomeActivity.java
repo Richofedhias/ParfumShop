@@ -13,12 +13,16 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.javabrother.parfumshop.fragment.AboutFragment;
 import com.javabrother.parfumshop.fragment.BerandaFragment;
+import com.javabrother.parfumshop.fragment.FaqFragment;
 import com.javabrother.parfumshop.fragment.KeranjangFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private BerandaFragment berandaFragment;
     private KeranjangFragment keranjangFragment;
+    private FaqFragment faqFragment;
+    private AboutFragment aboutFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,8 @@ public class HomeActivity extends AppCompatActivity {
 
         berandaFragment = new BerandaFragment();
         keranjangFragment = new KeranjangFragment();
+        faqFragment = new FaqFragment();
+        aboutFragment = new AboutFragment();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         setFragment(berandaFragment);
@@ -51,9 +57,15 @@ public class HomeActivity extends AppCompatActivity {
                         case R.id.menu_keranjang:
                             setFragment(keranjangFragment);
                             break;
+                        case R.id.menu_faq:
+                            setFragment(faqFragment);
+                            break;
+                        case R.id.menu_about:
+                            setFragment(aboutFragment);
+                            break;
                     }
                     return true;
                 }
             };
-    
+
 }
